@@ -1,0 +1,115 @@
+/* index.css - Elegant Voting UI */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #eef2f3, #8ec5fc);
+  color: #333;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.container {
+  max-width: 800px;
+  background: #ffffffcc;
+  padding: 30px;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th, .table td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.table th {
+  background-color: #009688;
+  color: white;
+  font-size: 16px;
+}
+
+.table tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+input[type="text"], input[type="date"] {
+  padding: 10px;
+  width: 95%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 5px;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="date"]:focus {
+  border-color: #009688;
+  box-shadow: 0 0 6px #00968855;
+  outline: none;
+}
+
+.btn, input[type="submit"], button {
+  padding: 12px 20px;
+  background-color: #009688;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.btn:hover, input[type="submit"]:hover, button:hover {
+  background-color: #00796b;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+#voteButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#msg {
+  font-size: 16px;
+  color: #2e7d32;
+  margin-top: 15px;
+  transition: all 0.4s ease;
+}
+
+#account {
+  margin-top: 20px;
+  font-style: italic;
+  text-align: center;
+  color: #444;
+}
