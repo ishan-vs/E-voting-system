@@ -3,7 +3,7 @@ body {
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background:   
-              url('assets/Angled\ wave\ gris.jpg') no-repeat center center fixed;
+              url('Angled\ wave\ gris.jpg') no-repeat center center fixed;
   background-size: cover;
   color: rgb(255, 255, 255);
   min-height: 100vh;
@@ -113,4 +113,5 @@ body {
     margin-bottom: 10px;
   }
 }
+
 
