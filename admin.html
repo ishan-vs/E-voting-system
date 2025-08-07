@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Portal</title>
+  <link rel="stylesheet" type="text/css" href="../css/admin.css" />
+</head>
+<body>
+  <div id="head" class="text-center">
+    <h1 align="center" style="color: azure;">Admin Panel - Online Voting System</h1>
+    <br />
+  </div>
+
+  <div class="container">
+    <legend>Add Candidate</legend>
+    <table class="table text-center">
+      <tr>
+        <th>Name</th>
+        <td><input id="name" type="text" placeholder="Candidate's name" autocomplete="off" /></td>
+        <th>Party</th>
+        <td><input id="party" type="text" placeholder="Candidate's party" /></td>
+      </tr>
+    </table>
+    <input id="addCandidate" type="submit" value="Add Candidate" />
+    <p id="Aday"></p>
+  </div>
+
+  <div class="container">
+    <legend>Define Voting Dates</legend>
+    <table class="table text-center">
+      <tr>
+        <th>Start date</th>
+        <td><input id="startDate" type="date" /></td>
+        <th>End date</th>
+        <td><input id="endDate" type="date" /></td>
+      </tr>
+    </table>
+    <input id="addDate" type="submit" value="Define Dates" />
+    <p id="datesMessage"></p>
+  </div>
+
+  <script>
+    const candidates = JSON.parse(localStorage.getItem('candidates')) || [];
+
+    document.getElementById("addCandidate").addEventListener("click", function () {
+      const name = document.getElementById("name").value;
+      const party = document.getElementById("party").value;
+
+      if (name && party) {
+        candidates.push({ name, party, votes: 0 });
+        localStorage.setItem("candidates", JSON.stringify(candidates));
+        alert("Candidate added successfully!");
+        document.getElementById("name").value = "";
+        document.getElementById("party").value = "";
+      } else {
+        alert("Please fill in all fields.");
+      }
+    });
+
+    document.getElementById("addDate").addEventListener("click", function () {
+      const startDate = document.getElementById("startDate").value;
+      const endDate = document.getElementById("endDate").value;
+
+      if (startDate && endDate) {
+        localStorage.setItem("votingDates", JSON.stringify({ start: startDate, end: endDate }));
+        alert("Voting dates set!");
+      } else {
+        alert("Please select both dates.");
+      }
+    });
+  </script>
+</body>
+</html>
